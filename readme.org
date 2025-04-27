@@ -1,1 +1,5 @@
-Protocols for viability assessment
+*Protocols for viability assessment*
+
+* Organization
+- =main.tex= maintains task lists and the index to protocols.
+- =./img/= contains images, illustrations and photographs.
