@@ -3,4 +3,5 @@
 *.bbl
 auto/*
 *.log
+*.toc
 *.synctex.gz
