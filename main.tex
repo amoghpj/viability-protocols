@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{soul}
 \usepackage{xcolor}
 \usepackage[]{fancyhdr}
 \title{Protocol and tasks - MUPPETS viability}
@@ -22,7 +23,7 @@
 \tableofcontents
 
 
-\section*{Task List}
+\section{Task List}
 
 \amogh{First comment}
 
@@ -34,7 +35,7 @@
 
 \newpage
 
-\section*{Protocols}
+\section{Protocols}
 \begin{itemize}
     \item Media prep
     \item Cell culture calculations
@@ -45,7 +46,44 @@
     \item Protocol - OD reads
     \item Treatment Preparation and Conditions \bradley{}
 \end{itemize}
-A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows:
+A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover.
+\begin{table}
+  \centering
+  \begin{tabular}[]{|c|c|c|c|}
+    \hline\hline
+    \textbf{Organism} & \textbf{Treatments} & \textbf{Treatment} & \textbf{Total plates required} \\
+     &  & \textbf{count} & \textbf{(2 CONOPS)} \\
+    \hline
+    \textit{Bacteria} & PODS 1.5w  & & \\
+     & PODS 1.6w  & & \\
+     & PODS 2.0  & & \\
+     & dry blood  & & \\
+     & wet blood  & & \\
+    \hline
+    & & 5 & 60\\
+    \hline
+    \textit{Virus} & PODS 1.5v  & & \\
+     & PODS 2.0v  & & \\
+     & dry blood  & & \\
+     & wet blood  & & \\
+             & 1:10 wet blood:VTM  & & \\
+    \hline
+    & & 5 & 60\\
+    \hline
+    \textit{Fungi} & PODS 1.5  & & \\
+     & PODS 2.0  & & \\
+     & dry blood  & & \\
+     & wet blood  & & \\
+    \hline
+    & & 4 & 48\\
+    \hline
+    \hline
+
+  \end{tabular}
+  \caption{Summary of dilution plates required for the full IV\&V run.}
+  \label{tab:dilution-plan}
+\end{table}
+
 \begin{itemize}
     \item Bacteria
         \begin{itemize}
@@ -70,16 +108,21 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 
 \newpage
-\section*{Day 0 Order of Operations} \label{day0instructions}
+\section{Preparation for Day 0}\label{sec:day0-prep}
+Bacterial media
+
+
+\section{Day 0 Order of Operations} \label{day0instructions}
 
 \begin{enumerate}
-    \item Check if samples (60x10mLx2 replicates) are actually frozen
-    \item If frozen $\rightarrow$ add half to freezer
-    \item Convert to 1mL 96 well plate format for tecan
+    \item Check if samples (60x10mLx2 replicates) are actually frozen.
+    \item \st{If frozen $\rightarrow$ add half to freezer} Move sample duplicates to freezer to verify by qPCR.
+    \item \amogh{This is a precaution against fungi clogging the FCA tips } Spin down tubes briefly.
+    \item Convert to 1mL 96 well plate format for tecan \amogh{Make Tecan script after optimizing for sample type}
     \item Hand 5 mL to our Fungal Czar (Collin)
-    \item If they pre-broke fungus, maybe handle on robot
+    \item If they pre-broke fungus, maybe handle on robot \amogh{This is hard to know, microscopy is out of question and blood is opaque so ??}
     \item If else, Collin will treat (sonication, mixing) to break up fungus, and hand back to Tecan
-    \item All 60 samples will be treated separately 10 times
+    \item All 60 samples will be treated separately 10 times.
     \item 4 treatments which will be handed as “bacterial” samples
     \item 3 treatments which will be handled as “viral” samples
     \item 3 treatments which will be handled as “fungal” samples
@@ -87,7 +130,6 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
     \item Bacteria: Limiting dilution series in U.B.M. -> qPCR
     \item Virus: 6x10 fold Vero plates 
     \item Fungus: handled like bacteria if broken up
-    \item 
 \end{enumerate}
 
 \section*{Day 1 Order of Operations} \label{day1instructions}
