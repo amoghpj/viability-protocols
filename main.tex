@@ -1,11 +1,12 @@
 \documentclass{article}
 
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage{xcolor}
 \title{Protocol and tasks - MUPPETS viability}
 \newcommand{\amogh}[1]{{\color{red}{[\textsc{For Amogh}] #1}}}
-\newcommand{\bradley}[1]{{\color{red}{[\textsc{For Bradley}] #1}}}
-\newcommand{\zeina}[1]{{\color{red}{[\textsc{For Zeina}] #1}}}
+\newcommand{\bradley}[1]{{\color{violet}{[\textsc{For Bradley}] #1}}}
+\newcommand{\zeina}[1]{{\color{blue}{[\textsc{For Zeina}] #1}}}
 \begin{document}
 
 \section*{Task List}
@@ -18,15 +19,62 @@
 
 \section*{Protocols}
 \begin{itemize}
-\item Media prep
-\item Cell culture calculations
-\item Tecan startup
-\item Tecan shutdown
-\item Protocol - Bacterial serial dilutions
-\item Protocol - Viral serial dilutions
-\item Protocol - OD reads
+    \item Media prep
+    \item Cell culture calculations
+    \item Tecan startup
+    \item Tecan shutdown
+    \item Protocol - Bacterial serial dilutions
+    \item Protocol - Viral serial dilutions
+    \item Protocol - OD reads
+    \item Treatment Preparation and Conditions \bradley{}
+\end{itemize}
+A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows:
+\begin{itemize}
+    \item Bacteria
+        \begin{itemize}
+            \item PODS 1.5w
+            \item PODS 1.6w
+            \item PODS 2.0
+            \item PBS
+        \end{itemize}
+    \item Viruses
+        \begin{itemize}
+            \item PODS 1.5v
+            \item PODS 2.0v
+            \item PBS
+        \end{itemize}
+    \item Fungi
+        \begin{itemize}
+            \item PODS 1.5
+            \item PODS 2.0
+            \item PBS
+        \end{itemize}
 \end{itemize}
 
+\section*{Day 0 Order of Operations} \label{day0instructions}
+
+\begin{enumerate}
+    \item Check if samples (60x10mLx2 replicates) are actually frozen
+    \item If frozen $\rightarrow$ add half to freezer
+    \item Convert to 1mL 96 well plate format for tecan
+    \item Hand 5 mL to our Fungal Czar (Collin)
+    \item If they pre-broke fungus, maybe handle on robot
+    \item If else, Collin will treat (sonication, mixing) to break up fungus, and hand back to Tecan
+    \item All 60 samples will be treated separately 10 times
+    \item 4 treatments which will be handed as “bacterial” samples
+    \item 3 treatments which will be handled as “viral” samples
+    \item 3 treatments which will be handled as “fungal” samples
+    \item Day 0 viability testing
+    \item Bacteria: Limiting dilution series in U.B.M. -> qPCR
+    \item Virus: 6x10 fold Vero plates 
+    \item Fungus: handled like bacteria if broken up
+    \item 
+\end{enumerate}
+
+\section*{Day 1 Order of Operations} \label{day1instructions}
+
+
+\section*{Day 7 Order of Operations} \label{day7instructions}
 
 
 \end{document}
