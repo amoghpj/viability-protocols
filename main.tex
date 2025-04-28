@@ -2,19 +2,36 @@
 
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage[]{fancyhdr}
 \title{Protocol and tasks - MUPPETS viability}
-\newcommand{\amogh}[1]{{\color{red}{[\textsc{For Amogh}] #1}}}
-\newcommand{\bradley}[1]{{\color{red}{[\textsc{For Bradley}] #1}}}
-\newcommand{\zeina}[1]{{\color{red}{[\textsc{For Zeina}] #1}}}
+\newcounter{comments}
+\newcommand{\amogh}[1]{{\addtocounter{comments}{1}}{\color{red}{[\textbf{TODO Amogh \thecomments :}\ #1}]}}
+\newcommand{\bradley}[1]{{\addtocounter{comments}{1}}{\color{red}{[\textbf{TODO Bradley \thecomments :}\ #1]}}}
+\newcommand{\zeina}[1]{{\addtocounter{comments}{1}}{\color{red}{[\textbf{TODO Zeina \thecomments :}\ #1]}}}
+\date{\today}
+
+
 \begin{document}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\fancyfoot[LO,RE]{\thepage\\LAST UPDATED \today}
+
+\maketitle
+\tableofcontents
+
 
 \section*{Task List}
 
-\amogh{test}
+\amogh{First comment}
 
 \zeina{test}
 
 \bradley{test}
+
+\amogh{Fill out protocols}
+
+\newpage
 
 \section*{Protocols}
 \begin{itemize}
@@ -27,7 +44,9 @@
 \item Protocol - OD reads
 \end{itemize}
 
+\newpage
 
+Some more tex
 
 \end{document}
 
