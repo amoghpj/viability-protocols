@@ -25,7 +25,11 @@
 
 \section{Task List}
 
-\amogh{First comment}
+\amogh{Make high throughput bacterial/fungal serial dilution script}
+
+\amogh{Make high throughput viral serial dilution script}
+
+\amogh{Make flexible script to reorganize samples after sample identification?}
 
 \zeina{test}
 
@@ -47,6 +51,32 @@
     \item Treatment Preparation and Conditions \bradley{}
 \end{itemize}
 A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover.
+
+\begin{table}
+  \centering
+  \begin{tabular}[]{c|c|c|c}
+    \textbf{Organism} & \textbf{Treatments} & \textbf{Treatment} & \textbf{Total plates required} \\
+     &  & \textbf{count} & \textbf{(2 CONOPS)} \\
+    \hline
+    \textit{Bacteria} & Sample  & & \\
+    \hline
+    & & 1 & 16\\
+    \hline
+    \textit{Virus} & Sample  & & \\
+    \hline
+    & & 1 & 16\\
+    \hline
+    \textit{Fungi} & Sample  & & \\
+    \hline
+    & & 1 & 16\\
+    \hline
+
+  \end{tabular}
+  \caption{Summary of dilution plates required for the Day 0 IV\&V run.}
+  \label{tab:dilution-plan-day-0}
+\end{table}
+
+
 \begin{table}
   \centering
   \begin{tabular}[]{c|c|c|c}
@@ -78,8 +108,8 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
     \hline
 
   \end{tabular}
-  \caption{Summary of dilution plates required for the full IV\&V run.}
-  \label{tab:dilution-plan}
+  \caption{Summary of dilution plates required for the Day 7 IV\&V run.}
+  \label{tab:dilution-plan-day-7}
 \end{table}
 
 \begin{itemize}
@@ -107,7 +137,18 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 \newpage
 \section{Preparation for Day 0}\label{sec:day0-prep}
-Bacterial media
+\textbf{Bacterial media} We need 16 384 well plates filled with 55uL of UBM/well, i.e. 400mL of UBM. Plates need to be labeled and filled by 2025-05-04.
+
+\textbf{Fungal media} We need 16 384 well plates filled with 55uL of UBM/well, i.e. 400mL of Yeast media (PDB). Plates need to be labeled and filled by 2025-05-04.
+
+\textbf{Seeded Vero plates} We need 16 96 well plates seeded with 200uL of 10\% confluent Vero cells. Plates need to be labeled and filled by 2025-05-04.
+
+\section{Preparation for Day 7}\label{sec:day7-prep}
+\textbf{Bacterial media} We need 60 384 well plates filled with 55uL of UBM/well, i.e. 1.5L of UBM. Plates need to be labeled and filled by 2025-05-09.
+
+\textbf{Fungal media} We need 48 384 well plates filled with 55uL of UBM/well, i.e. 1.1L of Yeast media (PDB). Plates need to be labeled and filled by 2025-05-09.
+
+\textbf{Seeded Vero plates} We need 60 96 well plates seeded with 200uL of 10\% confluent Vero cells. Plates need to be labeled and seeded by 2025-05-09 at most. 
 
 
 \section{Day 0 Order of Operations} \label{day0instructions}
