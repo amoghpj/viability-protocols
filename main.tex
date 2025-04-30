@@ -10,6 +10,7 @@
 \newcommand{\amogh}[1]{{\addtocounter{comments}{1}}{\color{red}{[\textbf{TODO Amogh \thecomments :}\ #1}]}}
 \newcommand{\bradley}[1]{{\addtocounter{comments}{1}}{\color{violet}{[\textbf{TODO Bradley \thecomments :}\ #1]}}}
 \newcommand{\zeina}[1]{{\addtocounter{comments}{1}}{\color{blue}{[\textbf{TODO Zeina \thecomments :}\ #1]}}}
+\newcommand{\colin}[1]{{\addtocounter{comments}{1}}{\color{cyan}{[\textbf{TODO Colin \thecomments :}\ #1]}}}
 \date{\today}
 
 
@@ -31,13 +32,20 @@
 
 \amogh{Make flexible script to reorganize samples after sample identification?}
 
-\zeina{test}
+\zeina{Be Bad Cop Again}
 
-\bradley{test}
+\bradley{Flesh out the day-by-day courses with Amogh}
+
+\colin{Add in the protocol for difficult fungal handling}
 
 \amogh{Fill out protocols}
 
 \newpage
+
+\section{Foreword}
+We are receiving 60 distinct samples, with 2 replicates from NIST. These samples are 10 mL blood which are potentially frozen, and potentially not frozen. Each sample has between 0 and 3 organisms, which are a combination of fungi, viruses, and bacteria. We need to store the sample in 2 CONOPS (doubling treatment plates). The Cell Viability Core (CVC) are potentially unblinded to the samples. The treatment teams (Silver \& Marelli) are blinded to the samples to avoid preferential treatment. We need to report for each sample what was in it, how much, and how much survived after 7 days.
+
+All samples need to be treated as BSL2+. All well plates need to have lids at all times. All handling of samples need to be done in the Tecan (sealed) or in a bio-safety cabinet. All biosafety bags which handle BSL2+ samples need to be sprayed down before placing in normal biosafety containers, including that from the Tecan. \amogh{I was forgetting some of the common sense safety stuff you probably know when converting from BSC best practices to Tecan best practices, perhaps it would be good to write them down}
 
 \section{Protocols}
 \begin{itemize}
@@ -49,7 +57,11 @@
     \item Protocol - Viral serial dilutions
     \item Protocol - OD reads
     \item Treatment Preparation and Conditions \bradley{}
+    \item Handling of samples with hyphal fungi \colin{} 
 \end{itemize}
+
+
+\section{Treatments} \label{treatments}
 A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover.
 
 \begin{table}
@@ -137,19 +149,40 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 \newpage
 \section{Preparation for Day 0}\label{sec:day0-prep}
-\textbf{Bacterial media} We need 16 384 well plates filled with 55uL of UBM/well, i.e. 400mL of UBM. Plates need to be labeled and filled by 2025-05-04.
+\subsection{Lab Changes}
+\begin{enumerate}
+    \item \amogh{Moving the centrifuge, and possibly moving Springer lab qPCR next to the Tecan \bradley{is this still do-able?}}
+    \item \bradley{We need to open 3-4 full boxes of tips of both sizes}
+    \item \zeina{Storage/workplace re-organization}
+    \begin{enumerate}
+        \item Clear/prepare the plate-filling area, store 384 well plates next to it
+        \item Clear and tape off areas for 384 well plate storage after incubation
+        \item Clear and tape off the vacuum filtration/treatment preparation area \bradley{I think we should just leave the pipettes i use to do this stuff next to the vacuum filtration/media zone, makes sense that they are there, but also need to clean out the impromptu storage}
+    \end{enumerate}
+    \item \colin{the declaration and preparation of a fungal zone with the coming sonication bath, a vortex mixer, place to set samples}
+\end{enumerate}
+
+\subsection{Labeling System/Plate Maps}
+\amogh{create a labeling system for all the media dilution plates, treatment plates, and initial blood plates, or plate maps as needed}
+
+\subsection{Media, plate, and sample preparation}
+\textbf{Bacterial media} We need 16 384 well plates filled with 55uL of UBM/well, i.e. 400mL of UBM. Plates need to be labeled and filled by 2025-05-04. 
 
 \textbf{Fungal media} We need 16 384 well plates filled with 55uL of UBM/well, i.e. 400mL of Yeast media (PDB). Plates need to be labeled and filled by 2025-05-04.
 
 \textbf{Seeded Vero plates} We need 16 96 well plates seeded with 200uL of 10\% confluent Vero cells. Plates need to be labeled and filled by 2025-05-04.
 
-\section{Preparation for Day 7}\label{sec:day7-prep}
+\textbf{Drying Caps} We need 30 of the milled drying caps filled with fresh 3a zeolite, and capped with aeraseals, placed into a drying container. 
+
+\textbf{Drying containers} We need all drying container dryrite (if used) 
+
+
+\section{Preparation for Day 7 and 8}\label{sec:day7-prep}
 \textbf{Bacterial media} We need 60 384 well plates filled with 55uL of UBM/well, i.e. 1.5L of UBM. Plates need to be labeled and filled by 2025-05-09.
 
 \textbf{Fungal media} We need 48 384 well plates filled with 55uL of UBM/well, i.e. 1.1L of Yeast media (PDB). Plates need to be labeled and filled by 2025-05-09.
 
 \textbf{Seeded Vero plates} We need 60 96 well plates seeded with 200uL of 10\% confluent Vero cells. Plates need to be labeled and seeded by 2025-05-09 at most. 
-
 
 \section{Day 0 Order of Operations} \label{day0instructions}
 
@@ -157,18 +190,33 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
     \item Check if samples (60x10mLx2 replicates) are actually frozen.
     \item \st{If frozen $\rightarrow$ add half to freezer} Move sample duplicates to freezer to verify by qPCR.
     \item \amogh{This is a precaution against fungi clogging the FCA tips } Spin down tubes briefly.
-    \item Convert to 1mL 96 well plate format for tecan \amogh{Make Tecan script after optimizing for sample type}
-    \item Hand 5 mL to our Fungal Czar (Collin)
-    \item If they pre-broke fungus, maybe handle on robot \amogh{This is hard to know, microscopy is out of question and blood is opaque so ??}
-    \item If else, Collin will treat (sonication, mixing) to break up fungus, and hand back to Tecan
-    \item All 60 samples will be treated separately 10 times.
-    \item 4 treatments which will be handed as “bacterial” samples
-    \item 3 treatments which will be handled as “viral” samples
-    \item 3 treatments which will be handled as “fungal” samples
-    \item Day 0 viability testing
-    \item Bacteria: Limiting dilution series in U.B.M. -> qPCR
-    \item Virus: 6x10 fold Vero plates 
-    \item Fungus: handled like bacteria if broken up
+    \item Convert sample tubes to 1mL 96 well plate format for tecan \amogh{Make Tecan script after optimizing for sample type}
+    \item During conversion to 96 well plate format, also pipette a small amount of the sample onto a plate for microscopy (2x 48 wells, or 1x 96well, ~100uL each) \zeina{label microscopy well plates and make plate maps}
+    \begin{enumerate}
+        \item \bradley{} will observe samples for large fungus clotting, etc.
+        \begin{enumerate}
+            \item If fungus comes dispersed, maybe handle on robot already 
+            \item If large fungal particles are observed, hand 5 mL of each sample to the Colin \colin{}, and he can handle them with sonication and mixing (per his protocol) before handing back to Tecan
+        \end{enumerate}
+    \end{enumerate}
+    \item At this point, the samples need to be handled on the robot for the following 3 tasks in order:
+    \begin{enumerate}
+        \item Day 0 identification (what is in each sample, if Cell Viability Core remains blinded)
+        \item dilution into treatment plates, and set up to dry
+        \item Day 0 viability (how many are in each sample) 
+    \end{enumerate}
+    
+    \item All 60 samples will be treated separately according to \ref{treatments}, summarized below:
+    
+    \begin{enumerate}
+        \item 4 treatments which will be handed as “bacterial” samples
+    \end{enumerate}
+    \begin{enumerate}
+        \item 3 treatments which will be handled as “viral” samples
+    \end{enumerate}
+    \begin{enumerate}
+        \item 3 treatments which will be handled as “fungal” samples
+    \end{enumerate}
 \end{enumerate}
 
 \section*{Day 1 Order of Operations} \label{day1instructions}
@@ -176,8 +224,8 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 \section*{Day 7 Order of Operations} \label{day7instructions}
 
+\section*{Day 8 Order of Operations} \label{day7instructions}
 
-Some more tex
 
 \end{document}
 
