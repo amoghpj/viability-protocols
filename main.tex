@@ -5,6 +5,8 @@
 \usepackage{soul}
 \usepackage{xcolor}
 \usepackage[]{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
 \title{Protocol and tasks - MUPPETS viability}
 \newcounter{comments}
 \newcommand{\amogh}[1]{{\addtocounter{comments}{1}}{\color{red}{[\textbf{TODO Amogh \thecomments :}\ #1}]}}
@@ -18,7 +20,7 @@
 \pagestyle{fancy}
 \fancyfoot{}
 \fancyhead{}
-\fancyfoot[LO,RE]{\thepage\\LAST UPDATED \today}
+\fancyfoot[LO,RE]{\thepage \quad   LAST UPDATED \today}
 
 \maketitle
 \tableofcontents
@@ -31,8 +33,6 @@
 \amogh{Make high throughput viral serial dilution script}
 
 \amogh{Make flexible script to reorganize samples after sample identification?}
-
-\zeina{Be Bad Cop Again}
 
 \bradley{Flesh out the day-by-day courses with Amogh}
 
@@ -54,17 +54,41 @@ All samples need to be treated as BSL2+. All well plates need to have lids at al
     \item Tecan startup
     \item Tecan shutdown
     \item Protocol - Bacterial serial dilutions
+        \begin{enumerate}
+            
+        \end{enumerate}
     \item Protocol - Viral serial dilutions
     \item Protocol - OD reads
     \item Treatment Preparation and Conditions \bradley{}
     \item Handling of samples with hyphal fungi \colin{} 
+    \begin{itemize}
+        \item receive 60 samples (4 ml of blood in ORIGINAL 10 ML TUBES) handed to him by Amogh/Bradley
+        \item Vortex ORIGINAL tubes, 1-2 at a time, for 4 rounds, 34 seconds each. (The breaks in between rounds are for Colin's poor fingers to rest). \textbf{[10 mins]}
+        \item Transfer vortexed tubes to 5 tube racks (12 tubes per rack).
+        \item Place first rack in bath sonicator. Make sure water is up to "fill" level.
+        \item Turn on bath sonicator for 10 minutes. 
+        \begin{itemize}
+            \item 
+        \end{itemize}
+        \item Repeat for all 5 racks. \textbf{[1 h 15 mins]}
+        \begin{itemize}
+            \item Look for breakage of fungus ball clumps. If you're not seeing anything, possibly repeat certain samples.
+        \end{itemize}
+        \item Grab pre-prepared \zeina{plan to hand colin these labeled tubes} 5 ml tubes, clean, labeled 1-60, and put 100 um cell strainer on top
+        \begin{itemize}
+            \item  (make sure the width of the cell strainer is compatible with the 5 ml tubes not the 50 mls!!)
+        \end{itemize}
+    \item Pour or use serological pipette \colin{decide which one} to filter the 60 sonicated samples into the clean 5 ml labeled tubes. 
+    \item For any remaining very large fungal balls stuck in filter, we would like to save them just in case. That way we are able to qPCR to identify the strain. \zeina{prepare a rack of 50 ml conicals on standby (ulabeled) just in case}
+    \item \amogh{do we now need to give you a plate of fungus so it can be TECAN ready? + how do we transfer them? + can we make a plate map for this?}
+    \end{itemize}
 \end{itemize}
 
 
 \section{Treatments} \label{treatments}
-A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover.
+A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover. See \ref{tab:dilution-plan-day-0} for a reference of the treatments and how many plates, and dilution plates are required. For the preparation of solutions, double the treatment per each organism type, and each treatment type. For treatment plates, each plate will have 36 microliters of treatment, to which 14 microliters of sample will be placed, or a 1/3 dilution. This has been verified for blood work.
 
-\begin{table}
+\begin{table} 
   \centering
   \begin{tabular}[]{c|c|c|c}
     \textbf{Organism} & \textbf{Treatments} & \textbf{Treatment} & \textbf{Total plates required} \\
@@ -91,32 +115,33 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 \begin{table}
   \centering
-  \begin{tabular}[]{c|c|c|c}
-    \textbf{Organism} & \textbf{Treatments} & \textbf{Treatment} & \textbf{Total plates required} \\
-     &  & \textbf{count} & \textbf{(2 CONOPS)} \\
+  \begin{tabular}[]{c|c|c|c|c}
+    \textbf{Organism} & \textbf{Treatments}  & \textbf{Treatment} & \textbf{Total plates required} \\
+     &   & \textbf{count} & \textbf{(2 CONOPS)} & \\
     \hline
-    \textit{Bacteria} & PODS 1.5w  & & \\
-     & PODS 1.6w  & & \\
-     & PODS 2.0  & & \\
-     & dry blood  & & \\
-     & wet blood  & & \\
+    \textit{Bacteria} & PODS 1.5w   & & & \\
+     & PODS 1.6w   & & & \\
+     & pullulan & & & \\
+     & dry blood   & & & \\
+     & wet blood   & & & \\
     \hline
-    & & 5 & 60\\
+    &  & 5& 60& \\
     \hline
-    \textit{Virus} & PODS 1.5v  & & \\
-     & PODS 2.0v  & & \\
-     & dry blood  & & \\
-     & wet blood  & & \\
-             & 1:10 wet blood:VTM  & & \\
+    \textit{Virus} & PODS 1.5w & & & \\
+     & PODS 1.5WV & & & \\
+     & dry blood   & & & \\
+     & wet blood   & & & \\
+             & 1:10 wet blood:VTM   & & & \\
+ & pullulan & & & \\
     \hline
-    & & 5 & 60\\
+    &  & 6& 60 & \\
     \hline
-    \textit{Fungi} & PODS 1.5  & & \\
-     & PODS 2.0  & & \\
-     & dry blood  & & \\
-     & wet blood  & & \\
+    \textit{Fungi} & PODS 1.5 & & & \\
+     & PODS 1.6 & & & \\
+     & dry blood   & & & \\
+     & wet blood   & & & \\
     \hline
-    & & 4 & 48\\
+    &  & 4 & 48 & \\
     \hline
 
   \end{tabular}
@@ -124,35 +149,13 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
   \label{tab:dilution-plan-day-7}
 \end{table}
 
-\begin{itemize}
-    \item Bacteria
-        \begin{itemize}
-            \item PODS 1.5w
-            \item PODS 1.6w
-            \item PODS 2.0
-            \item PBS
-        \end{itemize}
-    \item Viruses
-        \begin{itemize}
-            \item PODS 1.5v
-            \item PODS 2.0v
-            \item PBS
-        \end{itemize}
-    \item Fungi
-        \begin{itemize}
-            \item PODS 1.5
-            \item PODS 2.0
-            \item PBS
-        \end{itemize}
-\end{itemize}
-
 
 \newpage
 \section{Preparation for Day 0}\label{sec:day0-prep}
 \subsection{Lab Changes}
 \begin{enumerate}
-    \item \amogh{Moving the centrifuge, and possibly moving Springer lab qPCR next to the Tecan \bradley{is this still do-able?}}
-    \item \bradley{We need to open 3-4 full boxes of tips of both sizes}
+    \item \amogh{Moving the centrifuge}
+    \item \bradley{We need to open 6 full boxes of tips of both sizes}
     \item \zeina{Storage/workplace re-organization}
     \begin{enumerate}
         \item Clear/prepare the plate-filling area, store 384 well plates next to it
@@ -176,6 +179,7 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 
 \textbf{Drying containers} We need all drying container dryrite (if used) 
 
+\textbf{Tubes for Dividing Samples Upon Receipt} We need to pre-label and designate the tubes into three sets: Amogh, C
 
 \section{Preparation for Day 7 and 8}\label{sec:day7-prep}
 \textbf{Bacterial media} We need 60 384 well plates filled with 55uL of UBM/well, i.e. 1.5L of UBM. Plates need to be labeled and filled by 2025-05-09.
@@ -187,16 +191,20 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 \section{Day 0 Order of Operations} \label{day0instructions}
 
 \begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
     \item Check if samples (60x10mLx2 replicates) are actually frozen.
     \item \st{If frozen $\rightarrow$ add half to freezer} Move sample duplicates to freezer to verify by qPCR.
     \item \amogh{This is a precaution against fungi clogging the FCA tips } Spin down tubes briefly.
-    \item Convert sample tubes to 1mL 96 well plate format for tecan \amogh{Make Tecan script after optimizing for sample type}
-    \item During conversion to 96 well plate format, also pipette a small amount of the sample onto a plate for microscopy (2x 48 wells, or 1x 96well, ~100uL each) \zeina{label microscopy well plates and make plate maps}
+    \item Convert sample tubes to 1mL 96 well plate format for tecan + divide into 3 plates\amogh{Make Tecan script after optimizing for sample type} \zeina{account for these plates in plate maps}
+    
     \begin{enumerate}
+        \item Pipette 1 ml of each sample tube into deep well plates (Xx 96 deep wells, ~1 ml? each) \amogh{check desired amount, how many deep wells?} 
+        \item Pipette 4 ml of each sample tube into deep well plates for the Paulsson team \amogh{check desired amount}
+        \item Pipette a small amount of the sample onto a plate for microscopy (2x 48 wells, or 1x 96well, ~100uL each) 
         \item \bradley{} will observe samples for large fungus clotting, etc.
         \begin{enumerate}
             \item If fungus comes dispersed, maybe handle on robot already 
-            \item If large fungal particles are observed, hand 5 mL of each sample to the Colin \colin{}, and he can handle them with sonication and mixing (per his protocol) before handing back to Tecan
+            \item If large fungal particles are observed, hand\textbf{ THE REMAINING SAMPLE IN ITS ORIGINAL TUBES} to the Colin \colin{}, and he can handle them with sonication and mixing (per his protocol \amogh{how do i reference the protocols section? -z}) before handing back to Tecan
         \end{enumerate}
     \end{enumerate}
     \item At this point, the samples need to be handled on the robot for the following 3 tasks in order:
@@ -220,11 +228,56 @@ A total of 10 treatments will be prepared and applied to all 60 samples on  \ref
 \end{enumerate}
 
 \section*{Day 1 Order of Operations} \label{day1instructions}
+\begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
+    \item Take out the incubating plates from day 0 viability to the benchtop to prevent evaporation
+    \item Prepare the dilution plates for day 1 viability of all treatment plates
+\end{enumerate}
 
+\section*{Day 2 Order of Operations} \label{day1instructions}
+\begin{enumerate}
+    \item Take out the incubating plates from day 1 viability to the benchtop to prevent evaporation
+    \item Do the qPCR viability protocol for bacteria \textbf{day 0} plates to measure viability (round \textbf{1})
+    \item Do the qPCR viability protocol for fungal \textbf{day 0} plates to measure viability (round \textbf{1})
+\end{enumerate}
+
+\section*{Day 3 Order of Operations} \label{day1instructions}
+\begin{enumerate}
+    \item Do the qPCR viability protocol for bacteria \textbf{day 0} plates to measure viability (round \textbf{2})
+    \item Do the qPCR viability protocol for fungal \textbf{day 0} plates to measure viability (round \textbf{2})
+\end{enumerate}
 
 \section*{Day 7 Order of Operations} \label{day7instructions}
+\begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
+    \item Prepare the dilution plates for viability for the frozen samples
+\end{enumerate}
 
-\section*{Day 8 Order of Operations} \label{day7instructions}
+\section*{Day 8 Order of Operations} \label{day8instructions}
+\begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
+    \item Take out the incubating plates from day 7 viability to the benchtop to prevent evaporation
+    \item Prepare the dilution plates for viability for the frozen samples
+\end{enumerate}
+
+\section*{Day 9 Order of Operations} \label{day8instructions}
+\begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
+    \item Take out the incubating plates from day 8 viability to the benchtop to prevent evaporation
+    \item Do the qPCR viability protocol for bacteria \textbf{day 7 RT} plates to measure viability (round \textbf{1})
+    \item Do the qPCR viability protocol for fungal \textbf{day 7 RT} plates to measure viability (round \textbf{1})
+\end{enumerate}
+
+\section*{Day 10 Order of Operations} \label{day8instructions}
+\begin{enumerate}
+    \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
+    \item Do the qPCR viability protocol for bacteria \textbf{day 7 frozen} plates to measure viability (round \textbf{2})
+    \item Do the qPCR viability protocol for fungal \textbf{day 7 frozen} plates to measure viability (round \textbf{2})
+\end{enumerate}
+
+
+\section*{Appendix - Plate Maps} \label{platemaps}
+
 
 
 \end{document}
