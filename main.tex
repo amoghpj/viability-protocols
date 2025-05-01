@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{soul}
+\usepackage{cleveref}
 \usepackage{xcolor}
 \usepackage[]{fancyhdr}
 \title{Protocol and tasks - MUPPETS viability}
@@ -49,17 +50,65 @@ All samples need to be treated as BSL2+. All well plates need to have lids at al
 
 \section{Protocols}
 \begin{itemize}
-    \item Media prep
+    \item Media prep (\Cref{sec:media-prep})
     \item Cell culture calculations
-    \item Tecan startup
-    \item Tecan shutdown
-    \item Protocol - Bacterial serial dilutions
+    \item Tecan startup (\Cref{sec:tecan-start})
+    \item Tecan shutdown (\Cref{sec:tecan-shut})
+    \item Protocol - Bacterial, fungal serial dilutions (Method: \texttt{Serial Dilutions - Bacterial/Fungal})
     \item Protocol - Viral serial dilutions
-    \item Protocol - OD reads
+    \item Protocol - qPCR setup for bacteria/fungi (Method: \texttt{384 well plates read})
+    \item Protocol - qPCR setup for virus (Method: \texttt{384 well plates read})
+    \item Protocol - OD reads (Method: \texttt{384 well plates read})
     \item Treatment Preparation and Conditions \bradley{}
     \item Handling of samples with hyphal fungi \colin{} 
 \end{itemize}
 
+\subsection{Media prep}
+\label{sec:media-prep}
+\begin{description}
+\item[Universal bacterial media (UBM)] TSB+BHI supplemented with NAD and Hemin. TSB - Mix 30g TSB powder into 1L media, autoclave. BHI - mix 37g BHI powder into 1L media, autoclave. 2000X Hemin and NAD stocks are stored in the -80 in GOLD513.
+\item[Fungal media] Potato Dextrose Broth.
+\item[Cell culture media for Vero cells] EMEM + 10\% FBS. We use 200uL per well, each 96 well plate needs 20mL of cells resuspended in media.
+\end{description}
+
+\subsection{Cell culture calculations}
+\label{sec:cell-culture}
+\begin{table}[h]
+  \centering
+\begin{tabular}{c|c}
+Seeding density & 4e4 \\
+Wells per plate & 100 \\
+Replicates & 4 \\
+CONOPS & 2 \\
+Number of treatments & 4\\
+Number of dilutions & 6\\
+Total plates required &  192\\
+\end{tabular}
+
+  \end{tabular}
+\end{table}
+
+\subsection{Tecan startup}
+\label{sec:tecan-start}
+\begin{enumerate}
+\item Turn Tecan power on. The power switch is located on the white box next to the computer below the deck.
+\item Start FluentControl, the Tecan software. This can take 3-5 minutes. Acknowledge the warning that the software is not meant of clinical use.
+\item Ensure the deck is cleared of any old tip boxes, tip box lids, plates, stray pipette tips etc.
+\item Examine the RGA, the robotic arm fingers
+  \begin{enumerate}
+  \item Pull down the RGA until it is flat against one of the plate nests. Ensure the fingers are both horizontal. If not, align the fingers.
+  \item Firmly but slowly move the fingers up and down to ensure the screw is tight. If the finger is pivoting in the z-direction, tighten the screw at the base of the finger using the TORX15 or TORX20 screw driver.
+  \item Spray deck with 70\% ethanol, wipe down.
+  \item Place bioharzard bag in the waste chute.
+  \end{enumerate}
+\end{enumerate}
+
+
+\subsection{Tecan shutdown}
+\label{sec:tecan-shut}
+\begin{enumerate}
+\item 
+\end{enumerate}
 
 \section{Treatments} \label{treatments}
 A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover.
