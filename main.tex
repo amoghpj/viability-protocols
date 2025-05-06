@@ -36,16 +36,14 @@
 
 \bradley{Flesh out the day-by-day courses with Amogh}
 
-\colin{Add in the protocol for difficult fungal handling}
-
 \amogh{Fill out protocols}
 
 \newpage
-
+y
 \section{Foreword}
 We are receiving 60 distinct samples, with 2 replicates from NIST. These samples are 10 mL blood which are potentially frozen, and potentially not frozen. Each sample has between 0 and 3 organisms, which are a combination of fungi, viruses, and bacteria. We need to store the sample in 2 CONOPS (doubling treatment plates). The Cell Viability Core (CVC) are potentially unblinded to the samples. The treatment teams (Silver \& Marelli) are blinded to the samples to avoid preferential treatment. We need to report for each sample what was in it, how much, and how much survived after 7 days.
 
-All samples need to be treated as BSL2+. All well plates need to have lids at all times. All handling of samples need to be done in the Tecan (sealed) or in a bio-safety cabinet. All biosafety bags which handle BSL2+ samples need to be sprayed down before placing in normal biosafety containers, including that from the Tecan. \amogh{I was forgetting some of the common sense safety stuff you probably know when converting from BSC best practices to Tecan best practices, perhaps it would be good to write them down}
+All samples need to be treated as BSL2+. All well plates need to have lids at all times. All handling of samples need to be done in the Tecan (sealed) or in a bio-safety cabinet. All biosafety bags which handle BSL2+ samples need to be sprayed down before placing in normal biosafety containers, including that from the Tecan. 
 
 \section{Protocols}
 \begin{itemize}
@@ -332,10 +330,15 @@ We will perform 6 dilutions per sample.
 
 \begin{enumerate}
     \item GOTO Tecan, and run the startup verification script to make sure that it is lifting plates, grabbing pipettes tips, and that the cytomat is working. \amogh{}
-    \item Check if samples (60x10mLx2 replicates) are actually frozen.
+    \amogh{Stamp out the formulation plates between 9 AM and noon}
+    \bradley{Prepare the drying plate-racks, and place them with empty boxes in the BSC}
+
+    
+    \item Check if samples (60x10mLx2 replicates) are actually frozen. \amogh{} \colin{} \zeina{}
     \item \st{If frozen $\rightarrow$ add half to freezer} Move sample duplicates to freezer to verify by qPCR.
     \item \amogh{This is a precaution against fungi clogging the FCA tips } Spin down tubes briefly.
     \item Convert sample tubes to 1mL 96 well plate format for tecan + divide into 3 plates\amogh{Make Tecan script after optimizing for sample type} \zeina{account for these plates in plate maps}
+    \item \amogh{generate one of these stamps into a microscopy source plate}, so \bradley{microscopy of plates to look for fungi}
     
     \begin{enumerate}
         \item Pipette 1 ml of each sample tube into deep well plates (Xx 96 deep wells, ~1 ml? each) \amogh{check desired amount, how many deep wells?} 
