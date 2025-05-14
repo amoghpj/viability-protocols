@@ -286,7 +286,9 @@ If you are moving volume \texttt{V} from source tube \texttt{i} to well \texttt{
 
 \texttt{Source[i],1,Target[001],j,V}
 
-The CSV file should contain no header.
+\texttt{Target[001]} refers to the plate ID, and should not be changed or indexed unless a different plate has been added to the worktable.
+
+The CSV file should contain no header. Name the file \texttt{consolidate-eppentubes-to-96wellpcr.csv} and save it on the Desktop/ on the Tecan computer. 
 
 \section{Treatments} \label{treatments}
 A total of 10 treatments will be prepared and applied to all 60 samples on  \ref{day0instructions}, the treatment conditions have been decided as follows. The following calculations assume we are doing 2 treatment replicates that go into dilutions. We expect 1e6 cells/mL or 1e4 cells/well. We will perform 6x 10-fold serial dilutions to account for carryover. See \ref{tab:dilution-plan-day-0} for a reference of the treatments and how many plates, and dilution plates are required. For the preparation of solutions, double the treatment per each organism type, and each treatment type. For treatment plates, each plate will have 36 microliters of treatment, to which 14 microliters of sample will be placed, or a 1/3 dilution. This has been verified for blood work.
